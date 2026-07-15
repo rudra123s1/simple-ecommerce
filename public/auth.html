@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veloce | Authentication</title>
+  <meta name="description" content="Sign in or create a Veloce account to secure your purchases and track your orders.">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Rendered dynamically by app.js -->
+  <header></header>
+
+  <main>
+    <div class="auth-container glass-panel">
+      <!-- Tabs for toggling sign-in/register -->
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tab-login" type="button">Sign In</button>
+        <button class="auth-tab" id="tab-register" type="button">Register</button>
+      </div>
+
+      <!-- Sign In Form -->
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" class="form-control" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="gradient-btn" style="width: 100%; margin-top: 1rem;">
+          Sign In Securely ✦
+        </button>
+      </form>
+
+      <!-- Registration Form -->
+      <form id="register-form" style="display: none;">
+        <div class="form-group">
+          <label for="reg-username">Username</label>
+          <input type="text" id="reg-username" class="form-control" placeholder="designer101" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" class="form-control" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" class="form-control" placeholder="At least 6 characters" required minlength="6">
+        </div>
+        <div class="form-group">
+          <label for="reg-confirm-password">Confirm Password</label>
+          <input type="password" id="reg-confirm-password" class="form-control" placeholder="Confirm your password" required>
+        </div>
+        <button type="submit" class="gradient-btn" style="width: 100%; margin-top: 1rem;">
+          Create My Account ✦
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <div class="max-width">
+      <p>&copy; 2026 VELOCE Tech & Design. Built with premium aesthetics and care.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>

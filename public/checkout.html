@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veloce | Secure Checkout</title>
+  <meta name="description" content="Complete your purchase securely. Enter shipping address and payment details.">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Rendered dynamically by app.js -->
+  <header></header>
+
+  <main>
+    <h1 class="mb-4">Secure Checkout</h1>
+
+    <!-- Grid Layout: Form and Order Summary -->
+    <div class="cart-summary-layout" id="checkout-layout">
+      <!-- Left: Form -->
+      <section class="glass-panel" style="padding: 2rem;">
+        <form id="checkout-form">
+          <h3 class="mb-3">Shipping Details</h3>
+          
+          <div class="form-group">
+            <label for="shipping-name">Full Name</label>
+            <input type="text" id="shipping-name" class="form-control" placeholder="John Doe" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="shipping-address">Street Address</label>
+            <input type="text" id="shipping-address" class="form-control" placeholder="123 Design Studio Rd" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="shipping-city">City</label>
+              <input type="text" id="shipping-city" class="form-control" placeholder="Metropolis" required>
+            </div>
+            <div class="form-group">
+              <label for="shipping-zip">Postal / ZIP Code</label>
+              <input type="text" id="shipping-zip" class="form-control" placeholder="10001" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="shipping-country">Country</label>
+            <input type="text" id="shipping-country" class="form-control" placeholder="United States" required>
+          </div>
+
+          <h3 class="mt-4 mb-3">Simulated Payment</h3>
+          <p class="text-secondary mb-3" style="font-size: 0.9rem;">
+            * This is a demonstration store checkout. Do not enter real credit card numbers.
+          </p>
+
+          <div class="form-group">
+            <label for="card-name">Cardholder Name</label>
+            <input type="text" id="card-name" class="form-control" placeholder="John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="card-num">Credit Card Number</label>
+            <input type="text" id="card-num" class="form-control" placeholder="•••• •••• •••• ••••" required minlength="16" maxlength="19">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="card-expiry">Expiry Date</label>
+              <input type="text" id="card-expiry" class="form-control" placeholder="MM/YY" required minlength="5" maxlength="5">
+            </div>
+            <div class="form-group">
+              <label for="card-cvc">CVC Code</label>
+              <input type="text" id="card-cvc" class="form-control" placeholder="•••" required minlength="3" maxlength="4">
+            </div>
+          </div>
+
+          <button type="submit" id="place-order-btn" class="gradient-btn mt-4" style="width: 100%;">
+            Place Order & Pay ✦
+          </button>
+        </form>
+      </section>
+
+      <!-- Right: Summary -->
+      <aside class="glass-panel summary-card" style="height: fit-content;">
+        <h3>Order Items</h3>
+        
+        <div id="checkout-items-list" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; max-height: 250px; overflow-y: auto;">
+          <!-- Dynamically filled items list -->
+        </div>
+
+        <div style="border-top: 1px solid var(--border-color); margin-top: 1.5rem; padding-top: 1.5rem;">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="checkout-subtotal">$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span id="checkout-shipping">Free</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="checkout-total">$0.00</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <div class="max-width">
+      <p>&copy; 2026 VELOCE Tech & Design. Built with premium aesthetics and care.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/checkout.js"></script>
+</body>
+</html>

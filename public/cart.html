@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veloce | Shopping Cart</title>
+  <meta name="description" content="Review items in your Veloce shopping cart, modify quantities, and proceed to checkout.">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Rendered dynamically by app.js -->
+  <header></header>
+
+  <main>
+    <h1 class="mb-4">Shopping Cart</h1>
+
+    <!-- Cart Layout Grid -->
+    <div id="cart-container" class="cart-summary-layout" style="display: none;">
+      <!-- Left side: Items Table -->
+      <section class="glass-panel" style="padding: 1.5rem; overflow-x: auto; flex-grow: 1;">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th class="text-center">Quantity</th>
+              <th>Price</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cart-items-body">
+            <!-- Populated dynamically -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Right side: Cart Summary -->
+      <aside class="glass-panel summary-card">
+        <h3>Order Summary</h3>
+        <div class="mt-3">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="summary-subtotal">$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span id="summary-shipping">Free</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="summary-total">$0.00</span>
+          </div>
+          <button id="checkout-btn" class="gradient-btn" style="width: 100%;">
+            Proceed to Checkout ✦
+          </button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Empty state -->
+    <section id="cart-empty" class="empty-state">
+      <div class="empty-icon">🛒</div>
+      <h3>Your shopping cart is empty</h3>
+      <p class="text-secondary mt-1">Add items to your cart from our premium workspace collection.</p>
+      <a href="/" class="gradient-btn mt-3">Continue Shopping</a>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="max-width">
+      <p>&copy; 2026 VELOCE Tech & Design. Built with premium aesthetics and care.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/cart-page.js"></script>
+</body>
+</html>

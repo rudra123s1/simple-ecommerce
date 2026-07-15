@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veloce | Product Detail</title>
+  <meta name="description" content="View product specifications, details, and availability. Add items to your shopping cart.">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Rendered dynamically by app.js -->
+  <header></header>
+
+  <main>
+    <!-- Back to Shop Link -->
+    <div class="mb-4">
+      <a href="/" class="secondary-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+        ← Back to Catalog
+      </a>
+    </div>
+
+    <!-- Product Layout Container -->
+    <section class="glass-panel" id="product-detail-container" style="display: none;">
+      <div class="product-detail-layout">
+        <!-- Left Side: Image -->
+        <div class="detail-img-wrapper">
+          <img id="product-img" src="" alt="Product Image" class="detail-img" onerror="this.src='https://placehold.co/800x600/0d1426/a78bfa?text=Loading...'">
+        </div>
+
+        <!-- Right Side: Details & Actions -->
+        <div class="detail-info">
+          <span class="detail-category" id="product-category">Category</span>
+          <h1 class="detail-title" id="product-title">Loading Product...</h1>
+          
+          <div class="detail-price" id="product-price">$0.00</div>
+          
+          <p class="detail-desc" id="product-desc">
+            Please wait while product details are being loaded from the database.
+          </p>
+
+          <!-- Specifications Meta -->
+          <div class="detail-meta">
+            <div class="meta-item">
+              <span class="meta-label">Stock Status</span>
+              <span class="meta-val" id="product-stock-status">Checking...</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Warranty</span>
+              <span class="meta-val">2 Years Limited</span>
+            </div>
+          </div>
+
+          <!-- Quantity Selector & Cart Button -->
+          <div class="qty-selector">
+            <button class="qty-btn" id="qty-minus" type="button">-</button>
+            <span class="qty-val" id="qty-display">1</span>
+            <button class="qty-btn" id="qty-plus" type="button">+</button>
+            
+            <button class="gradient-btn" id="add-to-cart-btn" style="flex: 1; margin-left: 1rem;">
+              Add to Cart ✦
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Error/Loading State -->
+    <section id="detail-loader" class="empty-state">
+      <div class="empty-icon">⏳</div>
+      <h3>Retrieving specifications...</h3>
+      <p class="text-secondary mt-1">Connecting to the Veloce server database.</p>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="max-width">
+      <p>&copy; 2026 VELOCE Tech & Design. Built with premium aesthetics and care.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/product-detail.js"></script>
+</body>
+</html>

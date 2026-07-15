@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veloce | Premium Tech & Design Store</title>
+  <meta name="description" content="Explore handcrafted tech peripherals, minimalist workspace essentials, and high-fidelity audio equipment. Built for high performance.">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Rendered dynamically by app.js -->
+  <header></header>
+
+  <main>
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <h1>VELOCE TECH</h1>
+      <p>Handcrafted workspace tools and high-performance design products tailored for productivity.</p>
+    </section>
+
+    <!-- Filters & Search Bar -->
+    <section class="filters-bar glass-panel">
+      <!-- Search Input -->
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" class="form-control search-input" placeholder="Search premium tech...">
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="category-tabs" id="category-tabs">
+        <button class="category-tab active" data-category="">All Items</button>
+        <button class="category-tab" data-category="Audio">Audio</button>
+        <button class="category-tab" data-category="Peripherals">Peripherals</button>
+        <button class="category-tab" data-category="Accessories">Accessories</button>
+        <button class="category-tab" data-category="Lifestyle">Lifestyle</button>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section id="products-section">
+      <div class="products-grid" id="products-grid">
+        <!-- Products will be dynamically populated here -->
+      </div>
+      
+      <!-- Empty state placeholder -->
+      <div id="empty-state" class="empty-state" style="display: none;">
+        <div class="empty-icon">⚡</div>
+        <h3>No matching products found</h3>
+        <p class="text-secondary mt-1">Try checking your spelling or selecting a different category filter.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="max-width">
+      <p>&copy; 2026 VELOCE Tech & Design. Built with premium aesthetics and care.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/products.js"></script>
+</body>
+</html>
