@@ -278,17 +278,27 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Initialize database then start server
-dbHelper.initDB()
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log(`==================================================`);
-      console.log(` Veloce Tech backend listening on port ${PORT}`);
-      console.log(` Local URL: http://localhost:${PORT}`);
-      console.log(`==================================================`);
+// Initialize database then start server if not running in serverless environment
+if (!process.env.VERCEL) {
+  dbHelper.initDB()
+    .then(() => {
+      app.listen(PORT, () => {
+        console.log(`==================================================`);
+        console.log(` Veloce Tech backend listening on port ${PORT}`);
+        console.log(` Local URL: http://localhost:${PORT}`);
+        console.log(`==================================================`);
+      });
+    })
+    .catch((err) => {
+      console.error('Failed to initialize database, shutting down:', err);
+      process.exit(1);
     });
-  })
-  .catch((err) => {
-    console.error('Failed to initialize database, shutting down:', err);
-    process.exit(1);
+} else {
+  // On Vercel (serverless), invoke DB schema initialization on start
+  dbHelper.initDB().catch(err => {
+    console.error('Vercel Database Schema Init failed:', err);
   });
+}
+
+module.exports = app;
+
